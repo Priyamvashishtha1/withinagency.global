@@ -34,11 +34,11 @@ export default function HomePage() {
       {/* 2. Divisions */}
       <section id="divisions" aria-labelledby="divisions-heading" className="scroll-mt-0">
         <Container>
-          <ul className="grid gap-6 lg:grid-cols-3">
+          <ul className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             {divisions.map((d, i) => (
               <li key={d.slug}>
                 <Reveal delay={i * 0.1} className="h-full">
-                  <DivisionCard division={d} />
+                  <DivisionCard division={d} compact />
                 </Reveal>
               </li>
             ))}

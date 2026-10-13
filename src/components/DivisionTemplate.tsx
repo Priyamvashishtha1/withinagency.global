@@ -11,7 +11,7 @@ import { ArrowLeft } from './icons';
 
 const sectionTop = 'pt-section lg:pt-section-lg';
 
-/** One template for /capital, /partnerships and /media. Copy lives in lib/divisions.ts. */
+/** One template for each division. Copy lives in lib/divisions.ts. */
 export default function DivisionTemplate({ division: d }: { division: Division }) {
   return (
     <>

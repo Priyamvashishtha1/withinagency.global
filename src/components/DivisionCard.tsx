@@ -4,13 +4,15 @@ import GlassCard from './GlassCard';
 import { ArrowRight } from './icons';
 
 /** Whole card is clickable through a single stretched link on the arrow button. */
-export default function DivisionCard({ division }: { division: Division }) {
+export default function DivisionCard({ division, compact = false }: { division: Division; compact?: boolean }) {
+  const isNewLuxury = division.slug === 'new-luxury';
+
   return (
-    <GlassCard className="group flex h-full min-h-card flex-col p-8 lg:p-10">
+    <GlassCard className={`group flex h-full min-h-card flex-col p-8 ${compact ? 'xl:p-6' : 'lg:p-10'}`}>
       <h3 className="text-h3 font-light uppercase">
-        Within <span className="block">{division.name}</span>
+        Within <span className={isNewLuxury ? 'block whitespace-nowrap' : 'block'}>{division.name}</span>
       </h3>
-      <p className="mt-3 text-label lowercase text-muted">{division.url}</p>
+      <p className={isNewLuxury ? 'mt-3 whitespace-nowrap text-label lowercase text-muted' : 'mt-3 text-label lowercase text-muted'}>{division.url}</p>
       <p className="mt-6 text-body text-muted">{division.short}</p>
       <Link
         href={division.path}

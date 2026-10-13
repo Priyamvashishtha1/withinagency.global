@@ -1,4 +1,4 @@
-export type DivisionSlug = 'capital' | 'partnerships' | 'media';
+export type DivisionSlug = 'capital' | 'partnerships' | 'media' | 'new-luxury';
 
 export interface Division {
   slug: DivisionSlug;
@@ -154,6 +154,51 @@ export const divisions: Division[] = [
     cta: {
       title: 'Tell your story.',
       text: 'Send us a brief, or just an idea. We will take it from there.',
+    },
+  },
+  {
+    slug: 'new-luxury',
+    name: 'New Luxury',
+    title: 'Within New Luxury',
+    url: 'withinagency.global/new-luxury',
+    path: '/new-luxury',
+    short: 'Strategy, experiences and growth for the next generation of luxury brands.',
+    tagline: 'Luxury made relevant for what comes next.',
+    metaDescription:
+      'Within New Luxury helps ambitious luxury brands shape their position, experiences and growth for a new generation.',
+    overview: {
+      heading: 'Luxury, reimagined.',
+      body: [
+        'Within New Luxury partners with brands that are defining a more contemporary idea of luxury: considered, culturally fluent and built around lasting relevance.',
+        'We bring together strategy, creative direction and commercial thinking to create experiences that feel distinctive at every touchpoint.',
+      ],
+      feature: {
+        title: 'What we bring',
+        text: 'A clear point of view for brands building the future of luxury.',
+        points: [
+          'Cultural insight with commercial discipline',
+          'Distinctive experiences across every touchpoint',
+          'Long-term thinking for enduring brand value',
+        ],
+      },
+    },
+    services: [
+      { title: 'Brand Strategy', text: 'Positioning and brand systems that set a clear direction for the next chapter.' },
+      { title: 'Experience Design', text: 'Physical and digital experiences that make every interaction feel considered.' },
+      { title: 'Cultural Intelligence', text: 'Insight into the audiences, shifts and signals shaping contemporary luxury.' },
+      { title: 'Creative Direction', text: 'A distinctive visual and verbal point of view across campaigns and channels.' },
+      { title: 'Client Experience', text: 'Service journeys designed to deepen loyalty and make every moment matter.' },
+      { title: 'Growth Strategy', text: 'Focused plans for entering new markets, audiences and categories with confidence.' },
+    ],
+    process: [
+      { title: 'Observe', text: 'We study your brand, its audience and the culture around it.' },
+      { title: 'Define', text: 'We establish the opportunity and the point of view that makes it yours.' },
+      { title: 'Design', text: 'We shape the strategy, identity and experiences that bring it to life.' },
+      { title: 'Evolve', text: 'We measure, refine and build relevance over time.' },
+    ],
+    cta: {
+      title: 'Shape what is next.',
+      text: 'Tell us where your brand is headed and we will help make the next chapter distinctive.',
     },
   },
 ];

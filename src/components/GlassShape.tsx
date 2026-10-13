@@ -22,6 +22,14 @@ export default function GlassShape({ variant, className = '' }: { variant: Divis
             style={{ left: `${i * 14}%`, top: `${i * 14}%` }}
           />
         ))}
+      {variant === 'new-luxury' &&
+        [0, 1, 2].map((i) => (
+          <div
+            key={i}
+            className="glass absolute h-[62%] w-[62%] rounded-full"
+            style={{ left: `${19 + i * 5}%`, top: `${i * 12}%` }}
+          />
+        ))}
     </div>
   );
 }
