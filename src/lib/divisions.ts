@@ -27,8 +27,8 @@ export const divisions: Division[] = [
     title: 'Within Capital',
     url: 'withinagency.global/capital',
     path: '/capital',
-    short: 'Strategic capital and advisory for companies ready to scale with conviction.',
-    tagline: 'Patient capital and sharp advisory for ambitious companies.',
+    short: 'Investment and wealth solutions connecting global investors with high-growth opportunities.',
+    tagline: 'We connect international investors with trusted, regulated partners for funds, private companies and real estate in two of the world’s most dynamic markets.',
     metaDescription:
       'Within Capital provides growth capital, strategic advisory, M&A support and structured financing for ambitious companies.',
     overview: {
@@ -72,7 +72,7 @@ export const divisions: Division[] = [
     title: 'Within Partnerships',
     url: 'withinagency.global/partnerships',
     path: '/partnerships',
-    short: 'Alliances, channels and joint ventures that open new markets and compound growth.',
+    short: 'Brand collaborations across sports, media and entertainment, built on culture and backed by results.',
     tagline: 'Alliances built to last, in markets worth entering.',
     metaDescription:
       'Within Partnerships designs and manages strategic alliances, channel programmes and joint ventures that open new markets.',
@@ -117,7 +117,7 @@ export const divisions: Division[] = [
     title: 'Within Media',
     url: 'withinagency.global/media',
     path: '/media',
-    short: 'Brand storytelling, content and distribution that earns attention and holds it.',
+    short: 'AI-driven media, creative and marketing operations for brands that want to move faster.',
     tagline: 'Stories and channels designed to be remembered.',
     metaDescription:
       'Within Media is the creative and content arm of Within Global: brand storytelling, content production, audience strategy and distribution.',
@@ -162,7 +162,7 @@ export const divisions: Division[] = [
     title: 'Within New Luxury',
     url: 'withinagency.global/new-luxury',
     path: '/new-luxury',
-    short: 'Strategy, experiences and growth for the next generation of luxury brands.',
+    short: 'Where money, taste and meaning are heading.',
     tagline: 'Luxury made relevant for what comes next.',
     metaDescription:
       'Within New Luxury helps ambitious luxury brands shape their position, experiences and growth for a new generation.',

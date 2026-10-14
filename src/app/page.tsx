@@ -2,7 +2,7 @@ import Container from '@/components/Container';
 import CTABand from '@/components/CTABand';
 import DivisionCard from '@/components/DivisionCard';
 import Reveal from '@/components/Reveal';
-import SectionHeading from '@/components/SectionHeading';
+// import SectionHeading from '@/components/SectionHeading';
 import { divisions } from '@/lib/divisions';
 import { pageMetadata } from '@/lib/seo';
 import { site } from '@/lib/site';

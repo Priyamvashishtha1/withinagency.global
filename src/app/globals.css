@@ -69,6 +69,62 @@
     border-radius: 24px;
     transition: transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1), border-color 0.4s ease;
   }
+  /* Division colour tokens are applied only to the four division cards. */
+  .glass-card[data-division='capital'] {
+    --division-fill: rgba(14, 59, 46, 0.55);
+    --division-border: rgba(184, 150, 62, 0.4);
+    --division-border-hover: rgba(201, 168, 90, 0.72);
+    --division-text: #F5F1E8;
+    --division-accent: #B8963E;
+    --division-small: #C9A85A;
+    --division-button-text: #0E3B2E;
+  }
+  .glass-card[data-division='partnerships'] {
+    --division-fill: rgba(22, 33, 62, 0.55);
+    --division-border: rgba(255, 90, 60, 0.4);
+    --division-border-hover: #FF5A3C;
+    --division-text: #F2E6D8;
+    --division-accent: #FF5A3C;
+  }
+  .glass-card[data-division='media'] {
+    --division-fill: rgba(11, 15, 42, 0.55);
+    --division-border: rgba(116, 87, 255, 0.4);
+    --division-border-hover: #7457FF;
+    --division-text: #F6F2EA;
+    --division-accent: #7457FF;
+    --division-small: #2EE0D2;
+    --division-button-text: #FFFFFF;
+  }
+  .glass-card[data-division='new-luxury'] {
+    --division-fill: rgba(74, 22, 34, 0.55);
+    --division-border: rgba(232, 211, 176, 0.4);
+    --division-border-hover: #E8D3B0;
+    --division-text: #F4EEE8;
+    --division-accent: #E8D3B0;
+  }
+  .glass-card[data-division] {
+    background: var(--division-fill);
+    border-color: var(--division-border);
+  }
+  .glass-card[data-division][data-interactive='true']:hover,
+  .glass-card[data-division][data-interactive='true']:focus-within {
+    border-color: var(--division-border-hover);
+  }
+  .glass-card[data-division] .division-card-action {
+    color: var(--division-accent);
+    border-color: var(--division-border);
+  }
+  .glass-card[data-division='media'] .division-card-action {
+    color: var(--division-button-text);
+    background: var(--division-accent);
+    border-color: var(--division-accent);
+  }
+  .glass-card[data-division] .division-card-action:hover,
+  .glass-card[data-division] .division-card-action:focus-visible {
+    background: var(--division-accent);
+    color: var(--division-button-text,var(--division-text));
+    border-color: var(--division-accent);
+  }
   .glass-card::after {
     content: '';
     position: absolute;
@@ -94,6 +150,84 @@
   }
   .skip-link:focus { top: 1rem; }
 }
+
+/* Within Capital: emerald and ivory surfaces with a restrained gold accent. */
+:root {
+  --capital-emerald: #0e3b2e;
+  --capital-ivory: #f5f1e8;
+  --capital-gold: #c9a85a;
+}
+.capital-hero {
+  isolation: isolate;
+  background: radial-gradient(ellipse at 76% 46%, rgba(29, 91, 67, .58), transparent 42%), var(--capital-emerald);
+}
+.capital-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: .14;
+  background-image: linear-gradient(rgba(245,241,232,.14) 1px, transparent 1px), linear-gradient(90deg, rgba(245,241,232,.14) 1px, transparent 1px);
+  background-size: 84px 84px;
+  mask-image: linear-gradient(110deg, transparent, black 55%, transparent);
+}
+.capital-glow {
+  position: absolute;
+  z-index: -1;
+  width: min(44vw, 620px);
+  aspect-ratio: 1;
+  top: 10%;
+  right: -8%;
+  border: 1px solid rgba(201,168,90,.18);
+  border-radius: 50%;
+  box-shadow: 0 0 0 52px rgba(201,168,90,.035), 0 0 0 104px rgba(201,168,90,.025);
+  animation: capital-orbit 24s ease-in-out infinite alternate;
+}
+.capital-kicker {
+  color: var(--capital-gold);
+  font-size: .72rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+.capital-kicker span { padding: 0 .5rem; color: rgba(245,241,232,.5); }
+/* Keep capital-page copy readable on both the dark default and light theme. */
+.capital-hero .text-label { color: rgba(245,241,232,.82); }
+.capital-page .capital-hero .text-muted { color: rgba(245,241,232,.82); }
+.capital-page .capital-hero-description { color: var(--capital-ivory); }
+.capital-hero .capital-kicker { color: #e0c477; }
+.capital-hero .capital-kicker span { color: rgba(245,241,232,.72); }
+.capital-page .text-muted { color: rgb(var(--fg) / .78); }
+.capital-page .capital-kicker { color: #a9822e; }
+.capital-page .capital-icon { color: #a9822e; }
+:root[data-theme='dark'] .capital-page .capital-kicker,
+:root[data-theme='dark'] .capital-page .capital-icon { color: #e0c477; }
+.capital-page .capital-panel .text-muted { color: rgb(var(--fg) / .82); }
+.capital-page .capital-cta-grid .text-muted { color: rgb(var(--fg) / .84); }
+:root[data-theme='light'] .capital-page .capital-cta-grid .capital-kicker { color: #87651f; }
+:root[data-theme='light'] .capital-page .capital-cta-grid #introduction-heading { color: #0e3b2e; }
+:root[data-theme='light'] .capital-page .capital-cta-grid #introduction-heading + p { color: #36594e; }
+.capital-panel {
+  border: 1px solid var(--glass-border);
+  background: linear-gradient(145deg, rgba(14,59,46,.25), var(--glass-fill));
+  box-shadow: var(--glass-shadow), inset 0 1px 0 var(--glass-highlight);
+  transition: transform .55s cubic-bezier(.215,.61,.355,1), border-color .4s ease;
+}
+.capital-panel:hover { transform: translateY(-5px); border-color: rgba(201,168,90,.55); }
+.capital-soft { background: linear-gradient(135deg, rgba(14,59,46,.1), var(--glass-fill)); border: 1px solid var(--glass-border); }
+.capital-cta-grid { border: 1px solid rgba(201,168,90,.3); background: linear-gradient(125deg, rgb(189, 231, 219)7, 0.7)5, 0.7), var(--glass-fill) 65%); }
+.capital-icon {
+  display: grid;
+  width: 3.25rem;
+  height: 3.25rem;
+  place-items: center;
+  border: 1px solid rgba(201,168,90,.55);
+  border-radius: 50%;
+  color: var(--capital-gold);
+  font-size: 1.45rem;
+  transition: color .3s ease, background .3s ease, transform .5s cubic-bezier(.215,.61,.355,1);
+}
+.glass-card:hover .capital-icon { color: var(--capital-emerald); background: var(--capital-gold); transform: rotate(-8deg) scale(1.06); }
+@keyframes capital-orbit { from { transform: translate3d(0,0,0) rotate(-8deg) scale(.96); } to { transform: translate3d(-3vw,2vh,0) rotate(8deg) scale(1.04); } }
 
 /* ---------- Ambient background: drifting monochrome orbs + grain ---------- */
 .orb {
@@ -123,9 +257,12 @@
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .orb, .page-enter { animation: none !important; }
+  .capital-glow { animation: none !important; }
   .glass-card, .glass-card::after { transition: none !important; }
   .glass-card[data-interactive='true']:hover,
   .glass-card[data-interactive='true']:focus-within { transform: none; }
+  .capital-panel, .capital-icon { transition: none !important; }
+  .capital-panel:hover, .glass-card:hover .capital-icon { transform: none; }
   .glass-card[data-interactive='true']:hover::after,
   .glass-card[data-interactive='true']:focus-within::after { transform: translateX(-120%); }
 }

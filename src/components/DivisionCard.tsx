@@ -8,18 +8,18 @@ export default function DivisionCard({ division, compact = false }: { division: 
   const isNewLuxury = division.slug === 'new-luxury';
 
   return (
-    <GlassCard className={`group flex h-full min-h-card flex-col p-8 ${compact ? 'xl:p-6' : 'lg:p-10'}`}>
-      <h3 className="text-h3 font-light uppercase">
+    <GlassCard data-division={division.slug} className={`group flex h-full min-h-card flex-col p-8 ${compact ? 'xl:p-6' : 'lg:p-10'}`}>
+      <h3 className="text-h3 font-light uppercase text-[var(--division-text,var(--fg))]">
         Within <span className={isNewLuxury ? 'block whitespace-nowrap' : 'block'}>{division.name}</span>
       </h3>
-      <p className={isNewLuxury ? 'mt-3 whitespace-nowrap text-label lowercase text-muted' : 'mt-3 text-label lowercase text-muted'}>{division.url}</p>
-      <p className="mt-6 text-body text-muted">{division.short}</p>
+      <p className={`${isNewLuxury ? 'mt-3 whitespace-nowrap' : 'mt-3'} text-label lowercase text-[var(--division-small,var(--division-text,var(--muted)))]`}>{division.url}</p>
+      <p className="mt-6 text-body text-[var(--division-text,var(--muted))]">{division.short}</p>
       <Link
         href={division.path}
         aria-label={`Explore ${division.title}`}
         className="mt-auto ml-auto pt-10 after:absolute after:inset-0 after:content-['']"
       >
-        <span className="glass glass-link grid h-btn w-btn place-items-center rounded-full">
+        <span className="division-card-action glass glass-link grid h-btn w-btn place-items-center rounded-full">
           <ArrowRight className="transition-transform duration-500 ease-out-cubic group-hover:translate-x-1" />
         </span>
       </Link>

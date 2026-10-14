@@ -12,6 +12,11 @@ export default function Footer() {
           <div className="md:col-span-5">
             <Logo />
             <p className="mt-6 max-w-[34ch] text-body text-muted">{site.tagline}</p>
+            <address className="mt-6 space-y-2 text-sm not-italic text-muted">
+              <p>Within Capital connects investors with independent third-party providers. Provider details and regulatory status are shared directly during an introduction.</p>
+              <p>Registered office: details to be confirmed by Within Global.</p>
+              <a className="transition-colors hover:text-fg" href={`mailto:${site.email}`}>{site.email}</a>
+            </address>
           </div>
           <nav aria-label="Divisions" className="md:col-span-3 md:col-start-8">
             <p className="text-label text-muted">Divisions</p>

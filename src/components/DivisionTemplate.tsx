@@ -4,7 +4,7 @@ import Container from './Container';
 import CTABand from './CTABand';
 import DivisionCard from './DivisionCard';
 import GlassCard from './GlassCard';
-import GlassShape from './GlassShape';
+// import GlassShape from './GlassShape';
 import Reveal from './Reveal';
 import SectionHeading from './SectionHeading';
 import { ArrowLeft } from './icons';
@@ -17,7 +17,7 @@ export default function DivisionTemplate({ division: d }: { division: Division }
     <>
       {/* 1. Hero */}
       <section aria-labelledby="hero-heading" className="relative flex min-h-[100svh] flex-col overflow-x-clip pb-16 pt-[calc(72px+48px)] lg:pb-24">
-        <GlassShape variant={d.slug} className="absolute -right-[14vw] top-[22%] w-[min(64vw,720px)] md:-right-[6vw]" />
+        {/* <GlassShape variant={d.slug} className="absolute -right-[14vw] top-[22%] w-[min(64vw,720px)] md:-right-[6vw]" /> */}
         <Container className="relative z-10 flex flex-1 flex-col">
           <Link href="/" className="inline-flex w-fit items-center gap-2 text-label text-muted transition-colors hover:text-fg">
             <ArrowLeft /> Within Global

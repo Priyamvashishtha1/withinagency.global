@@ -1,11 +1,11 @@
 export const site = {
   name: 'Within Global',
-  domain: 'withinagency.global',
+  domain: 'Growth, from within.',
   url: 'https://withinagency.global',
   fullTitle: 'Within Global | Capital, Partnerships, Media and New Luxury',
-  tagline: 'Capital, partnerships and media, built from the inside out.',
+  tagline: ' Within Global connects capital, culture and technology to help brands and investors scale across markets.',
   description:
-    'Within Global is a global agency with four divisions: Within Capital, Within Partnerships, Within Media and Within New Luxury. One group, one point of view.',
+    'We work at the point where investment, partnerships and media meet. Each of our businesses is a specialist in its own right. Together, they give our clients one partner for entering new markets, building brand value and growing faster.',
   email: 'hello@withinagency.global',
   // Replace "#" with real URLs when your legal pages exist (e.g. a hosted policy document).
   legal: [
