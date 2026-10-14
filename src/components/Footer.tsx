@@ -40,8 +40,9 @@ export default function Footer() {
           </nav>
         </div>
         <div className="mt-16 flex flex-col justify-between gap-2 border-t border-[var(--glass-border)] pt-8 text-label text-muted sm:flex-row">
-          <p>© {new Date().getFullYear()} Within Global. All rights reserved.</p>
-          <p className="lowercase">{site.domain}</p>
+          {/* <p>© {new Date().getFullYear()} Within Global. All rights reserved.</p> */}
+          <p>© 2022 Within Global. All rights reserved.</p>
+          <p className="lowercase">withinagency.global</p>
         </div>
       </Container>
     </footer>
