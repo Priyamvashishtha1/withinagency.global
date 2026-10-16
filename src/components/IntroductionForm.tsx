@@ -3,6 +3,7 @@
 import { useState, type FormEvent } from 'react';
 import Button from './Button';
 import { site } from '@/lib/site';
+import Disclaimer from "./Disclaimer";
 
 const disclaimer = 'Within Capital is a brand of Within Global and is not a bank, broker-dealer, investment adviser, fund manager, or other regulated financial institution. Information on this website is for general informational purposes only and does not constitute investment, legal, tax, accounting, or other professional advice, an offer to sell, or a solicitation to buy any security, fund interest, financial product, or service. No information here takes account of any person’s objectives, financial situation, or needs. Investments involve risk, including possible loss of principal, and past performance is not indicative of future results. Any investment decision should be made only after reviewing the relevant offering and disclosure documents and obtaining independent professional advice. Products and services may not be available to all persons or in all jurisdictions; eligibility and availability are determined by the relevant product provider and applicable law. Within Capital may introduce prospective clients to independent, appropriately authorised third-party providers. Those providers are responsible for their own products, advice, services, regulatory permissions, and client relationships. An introduction does not constitute an endorsement or guarantee. Nothing on this site creates an advisory, fiduciary, agency, or client relationship. Information is provided “as is”, may change without notice, and is not guaranteed to be complete or accurate. To the extent permitted by law, Within Global disclaims liability arising from reliance on this website. By using this site or submitting the form, you acknowledge this notice and consent to being contacted about your enquiry, subject to applicable privacy law.';
 
@@ -136,12 +137,13 @@ export default function IntroductionForm({
         </p>
       )}
 
-      <div className="border-t border-[var(--glass-border)] pt-6">
+      {/* <div className="border-t border-[var(--glass-border)] pt-6">
         <h3 className="text-label text-fg">Legal disclaimer</h3>
         <p className="mt-3 text-sm leading-relaxed text-muted">
           {disclaimer}
         </p>
-      </div>
+      </div> */}
+      <Disclaimer text={disclaimer} />
     </form>
   );
 }
