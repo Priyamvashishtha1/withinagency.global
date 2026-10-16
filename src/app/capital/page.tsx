@@ -38,13 +38,13 @@ const reasons = [
 export default function Page() {
   return <main className="capital-page">
 <section
-  aria-labelledby="hero-heading" className="capital-hero relative flex min-h-[88svh] flex-col overflow-hidden pb-16 pt-[40px] lg:min-h-[92svh] lg:pb-24">      <div className="capital-glow" aria-hidden="true" />
+  aria-labelledby="hero-heading" className="capital-hero relative flex min-h-[88svh] flex-col overflow-hidden pb-16 pt-[40spx] lg:min-h-[92svh] lg:pb-24">      <div className="capital-glow" aria-hidden="true" />
       <Container className="relative z-10 flex flex-1 flex-col">
-          <a href="/" className="inline-flex w-fit items-center gap-3 text-label text-[var(--capital-ivory)]/70 transition-colors hover:text-[var(--capital-ivory)]">
+          <a href="/" className="inline-flex w-fit items-center gap-3 pt-[40px] text-label text-[var(--capital-ivory)]/70 transition-colors hover:text-[var(--capital-ivory)]">
           <span className="h-px w-8 bg-[var(--capital-gold)]" aria-hidden="true" />
           <span>Within Global</span>
         </a>
-        {/* <div className="mt-auto max-w-5xl pt-24"> */}
+        {/* CHANGES RELATED TO GAP ON TOP */}
         <div className="mt-auto max-w-5xl pt-[2rem]">
           <p className="capital-kicker mb-7">Within Capital <span>·</span> India &amp; UAE</p>
           <h1 id="hero-heading" className="max-w-5xl text-balance text-[clamp(3.3rem,9vw,8.5rem)] font-light leading-[0.96] tracking-[-0.065em] text-[var(--capital-ivory)]">Capital that<br className="hidden sm:block" /> crosses borders<span className="text-[var(--capital-gold)]">.</span></h1>
@@ -65,7 +65,7 @@ export default function Page() {
         <ul className="mt-14 grid gap-5 md:grid-cols-2">
           {markets.map((item, i) => <li key={item.title}><Reveal delay={i * .1}><article className="capital-panel relative min-h-[290px] overflow-hidden rounded-3xl p-8 lg:p-12"><span className="absolute right-8 top-8 text-label tracking-[0.2em] text-[var(--capital-gold)]">{item.code}</span><div className="mb-12 h-px w-12 bg-[var(--capital-gold)]" /><h3 className="text-4xl font-light tracking-tight">{item.title}<span className="text-[var(--capital-gold)]">.</span></h3><p className="mt-5 max-w-[45ch] text-body text-muted">{item.text}</p></article></Reveal></li>)}
         </ul>
-        <Reveal><p className="mt-8 text-center text-label italic tracking-wide text-muted">Two markets. One trusted relationship.</p></Reveal>
+        {/* <Reveal><p className="mt-8 text-center text-label italic tracking-wide text-muted">Two markets. One trusted relationship.</p></Reveal> */}
       </Container>
     </section>
 
@@ -96,8 +96,7 @@ export default function Page() {
     <section aria-labelledby="why-heading" className="pt-section lg:pt-section-lg">
       <Container>
         <Reveal><SectionHeading id="why-heading" title="Why Within Capital" description="A thoughtful first step, backed by people who understand both markets." /></Reveal>
-        <ul className="mt-14 grid gap-8 md:grid-cols-3">{reasons.map((item, i) => <li key={item.title}><Reveal delay={i * .08}><div className="flex h-full gap-5"><span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[var(--capital-gold)]" /><div><h3 className="text-xl font-light">{item.title}</h3><p className="mt-4 text-body text-muted">{item.text}</p></div></div></Reveal></li>)}</ul>
-      </Container>
+<ul className="mt-14 grid gap-8 md:grid-cols-3">{reasons.map((item, i) => <li key={item.title}><Reveal delay={i * .08}><div className="flex h-full gap-5"><span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[var(--capital-gold)]" /><div><h3 className="text-3xl font-light">{item.title}</h3><p className="mt-4 text-body text-muted">{item.text}</p></div></div></Reveal></li>)}</ul>      </Container>
     </section>
 
     <section id="introduction" aria-labelledby="introduction-heading" className="pt-section lg:pt-section-lg">

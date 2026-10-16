@@ -13,7 +13,7 @@ export default function SectionHeading({ title, description, align = 'left', as:
   return (
     <div className={cn('max-w-3xl', align === 'center' && 'mx-auto text-center', className)}>
       <Tag id={id} className="text-h2 font-light uppercase text-balance">{title}</Tag>
-      {description && <p className={cn('mt-6 max-w-[60ch] text-body text-muted', align === 'center' && 'mx-auto')}>{description}</p>}
+      {description && <p className={cn('mt-6 max-w-none text-body text-muted', align === 'center' && 'mx-auto')}>{description}</p>}
     </div>
   );
 }
