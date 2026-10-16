@@ -37,11 +37,15 @@ const reasons = [
 
 export default function Page() {
   return <main className="capital-page">
-    <section aria-labelledby="hero-heading" className="capital-hero relative flex min-h-[88svh] flex-col overflow-hidden pb-16 pt-[calc(72px+48px)] lg:min-h-[92svh] lg:pb-24">
-      <div className="capital-glow" aria-hidden="true" />
+<section
+  aria-labelledby="hero-heading" className="capital-hero relative flex min-h-[88svh] flex-col overflow-hidden pb-16 pt-[40px] lg:min-h-[92svh] lg:pb-24">      <div className="capital-glow" aria-hidden="true" />
       <Container className="relative z-10 flex flex-1 flex-col">
-        <a href="/" className="inline-flex w-fit items-center gap-3 text-label text-[var(--capital-ivory)]/70 transition-colors hover:text-[var(--capital-ivory)]"><span className="h-px w-8 bg-[var(--capital-gold)]" />Within Global</a>
-        <div className="mt-auto max-w-5xl pt-24">
+          <a href="/" className="inline-flex w-fit items-center gap-3 text-label text-[var(--capital-ivory)]/70 transition-colors hover:text-[var(--capital-ivory)]">
+          <span className="h-px w-8 bg-[var(--capital-gold)]" aria-hidden="true" />
+          <span>Within Global</span>
+        </a>
+        {/* <div className="mt-auto max-w-5xl pt-24"> */}
+        <div className="mt-auto max-w-5xl pt-[2rem]">
           <p className="capital-kicker mb-7">Within Capital <span>·</span> India &amp; UAE</p>
           <h1 id="hero-heading" className="max-w-5xl text-balance text-[clamp(3.3rem,9vw,8.5rem)] font-light leading-[0.96] tracking-[-0.065em] text-[var(--capital-ivory)]">Capital that<br className="hidden sm:block" /> crosses borders<span className="text-[var(--capital-gold)]">.</span></h1>
           <div className="mt-8 h-px w-24 bg-[var(--capital-gold)]" />

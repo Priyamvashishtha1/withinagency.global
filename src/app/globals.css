@@ -214,7 +214,7 @@
 }
 .capital-panel:hover { transform: translateY(-5px); border-color: rgba(201,168,90,.55); }
 .capital-soft { background: linear-gradient(135deg, rgba(14,59,46,.1), var(--glass-fill)); border: 1px solid var(--glass-border); }
-.capital-cta-grid { border: 1px solid rgba(201,168,90,.3); background: linear-gradient(125deg, rgb(189, 231, 219)7, 0.7)5, 0.7), var(--glass-fill) 65%); }
+.capital-cta-grid { border: 1px solid rgba(201,168,90,.3); background: linear-gradient(125deg, rgba(14,59,46,.18), var(--glass-fill) 65%); }
 .capital-icon {
   display: grid;
   width: 3.25rem;
