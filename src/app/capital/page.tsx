@@ -73,8 +73,8 @@ export default function Page() {
     <section id="what-we-offer" aria-labelledby="offer-heading" className="pt-section lg:pt-section-lg">
       <Container>
         <Reveal><SectionHeading id="offer-heading" title="What we offer" description="A focused introduction to opportunities selected around your goals." /></Reveal>
-        <ul className="mt-14 grid gap-5 md:grid-cols-3">
-          {offers.map((item, i) => <li key={item.title}><Reveal delay={i * .08}><GlassCard className="flex h-full min-h-[330px] flex-col p-8 lg:p-10"><span className="capital-icon" aria-hidden="true">{item.icon}</span><h3 className="mt-12 text-h3 font-light">{item.title}</h3><p className="mt-5 text-body text-muted">{item.text}</p><span className="mt-auto pt-8 text-label uppercase tracking-[0.16em] text-[var(--capital-gold)]">India <span className="px-2">·</span> UAE</span></GlassCard></Reveal></li>)}
+        <ul className="mt-14 grid items-stretch gap-5 md:grid-cols-3">
+        {offers.map((item, i) => <li key={item.title} className="h-full"><Reveal delay={i * .08} className="h-full"><GlassCard className="flex h-full min-h-[330px] flex-col p-8 lg:p-10"><span className="capital-icon" aria-hidden="true">{item.icon}</span><h3 className="mt-12 text-h3 font-light">{item.title}</h3><p className="mt-5 text-body text-muted">{item.text}</p><span className="mt-auto pt-8 text-label uppercase tracking-[0.16em] text-[var(--capital-gold)]">India <span className="px-2">·</span> UAE</span></GlassCard></Reveal></li>)}
         </ul>
         <p className="mt-7 text-sm leading-relaxed text-muted">All products and services are provided by specialist partners, who are regulated in their own markets.</p>
       </Container>
