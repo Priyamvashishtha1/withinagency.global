@@ -13,7 +13,6 @@ export const metadata = pageMetadata({
 });
 
 const disclaimer = 'Within Capital is an introduction service. We do not provide investment, financial, tax or legal advice, and we do not arrange, manage or hold investments or client money. All investment products and services are provided by independent third parties who are responsible for their own regulatory compliance. We may receive a fee from partners for introductions. Investing involves risk: the value of investments can fall as well as rise, and you may get back less than you invest. Past performance is not a guide to future returns. Overseas investments carry additional risks, including currency movements and changes in local law and tax. Please seek independent advice before making any investment decision.';
-const disclaimer1 = 'Lets start the focus with: Business families and entrepreneurs Owners in the Asian Rich List and Eastern Eye award circles (Asian Business Awards, GG2 Leadership)';
 const markets = [
   { title: 'India', code: '01', text: 'A large, fast-growing economy with opportunities across listed funds, private businesses and property.' },
   { title: 'The UAE', code: '02', text: 'An international hub with a well-established framework for overseas investors and a dynamic real estate market.' },
@@ -110,7 +109,7 @@ export default function Page() {
     </section>
 
     <section aria-labelledby="disclaimer-heading" className="py-section lg:py-section-lg">
-      <Container><Reveal><SectionHeading id="disclaimer-heading" title="Important information" /><p className="mt-6 max-w-[100ch] text-sm leading-relaxed text-muted">{disclaimer1}</p><div className="mt-8 space-y-2 border-t border-[var(--glass-border)] pt-6 text-sm leading-relaxed text-muted"><p><span className="text-fg">Partnered with:</span> Count Infinity Services Pvt. Ltd., an AMFI-registered (ARN-324453), India.</p><p>UK Company number: 14042521</p><p>Registered office address: 128 City Road, London, United Kingdom, EC1V 2NX</p></div></Reveal></Container>
+      <Container><Reveal><SectionHeading id="disclaimer-heading" title="Important information" /><p className="mt-6 max-w-[100ch] text-sm leading-relaxed text-muted">{disclaimer}</p><div className="mt-8 space-y-2 border-t border-[var(--glass-border)] pt-6 text-sm leading-relaxed text-muted"><p><span className="text-fg">Partnered with:</span> Count Infinity Services Pvt. Ltd., an AMFI-registered (ARN-324453), India.</p><p>UK Company number: 14042521</p><p>Registered office address: 128 City Road, London, United Kingdom, EC1V 2NX</p></div></Reveal></Container>
     </section>
   </main>;
 }
