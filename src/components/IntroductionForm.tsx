@@ -166,19 +166,19 @@ export default function IntroductionForm({
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
-      <div className="grid gap-6 sm:grid-cols-2">
-        <label className="block text-label text-muted">
+    <form onSubmit={handleSubmit} className="w-full min-w-0 space-y-6">
+      <div className="grid w-full min-w-0 gap-6 sm:grid-cols-2">
+        <label className="block min-w-0 text-label text-muted">
           Name
           <input
             required
             autoComplete="name"
             name="name"
-            className="mt-2 w-full rounded-xl border border-[var(--glass-border)] bg-surface px-4 py-3 text-fg"
+            className="mt-2 block box-border w-full min-w-0 rounded-xl border border-[var(--glass-border)] bg-surface px-4 py-3 text-fg"
           />
         </label>
 
-        <label className="block text-label text-muted">
+        <label className="block min-w-0 text-label text-muted">
           Email
           <input
             required
@@ -187,14 +187,14 @@ export default function IntroductionForm({
             name="email"
             pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
             title="Enter an email address in the format name@example.com."
-            className="mt-2 w-full rounded-xl border border-[var(--glass-border)] bg-surface px-4 py-3 text-fg"
+            className="mt-2 block box-border w-full min-w-0 rounded-xl border border-[var(--glass-border)] bg-surface px-4 py-3 text-fg"
           />
         </label>
 
-        <label className="block text-label text-muted">
+        <label className="block min-w-0 text-label text-muted">
           Phone number
           <span
-            className="mt-2 flex w-full rounded-xl border border-[var(--glass-border)] bg-surface text-fg"
+            className="mt-2 box-border flex w-full min-w-0 rounded-xl border border-[var(--glass-border)] bg-surface text-fg"
             onBlur={(event) => {
               const nextTarget = event.relatedTarget;
               if (!(nextTarget instanceof Node) || !event.currentTarget.contains(nextTarget)) {
@@ -252,13 +252,13 @@ export default function IntroductionForm({
               aria-invalid={Boolean(phoneError)}
               aria-describedby={phoneError ? 'phone-error' : undefined}
               onChange={() => setPhoneError('')}
-              className="min-w-0 flex-1 rounded-r-xl bg-transparent px-3 py-3 text-fg outline-none placeholder:text-muted"
+              className="box-border min-w-0 flex-1 rounded-r-xl bg-transparent px-3 py-3 text-fg outline-none placeholder:text-muted"
             />
           </span>
           {phoneError && <span id="phone-error" role="alert" className="mt-2 block text-sm text-red-400">{phoneError}</span>}
         </label>
 
-        <label className="block text-label text-muted">
+        <label className="block min-w-0 text-label text-muted">
           Country of residence
           <span
             className="relative mt-2 block"
@@ -276,7 +276,7 @@ export default function IntroductionForm({
               aria-expanded={countryOpen}
               aria-invalid={countryError}
               onClick={() => { setCountryOpen((open) => !open); setCountryError(false); }}
-              className="flex w-full items-center justify-between rounded-xl border border-[var(--glass-border)] bg-surface px-4 py-3 text-left text-fg"
+              className="box-border flex w-full min-w-0 items-center justify-between rounded-xl border border-[var(--glass-border)] bg-surface px-4 py-3 text-left text-fg"
             >
               {selectedCountry ? (
                 <span className="flex items-center gap-3">
@@ -295,7 +295,7 @@ export default function IntroductionForm({
                   onChange={(event) => setCountrySearch(event.target.value)}
                   placeholder="Search countries"
                   aria-label="Search countries"
-                  className="w-full border-b border-[var(--glass-border)] bg-transparent px-4 py-3 text-fg outline-none placeholder:text-muted"
+                  className="box-border w-full min-w-0 border-b border-[var(--glass-border)] bg-transparent px-4 py-3 text-fg outline-none placeholder:text-muted"
                 />
                 <ul role="listbox" aria-label="Countries" className="max-h-60 overflow-y-auto py-1">
                   {filteredCountries.map(({ code, name }) => (
@@ -349,13 +349,13 @@ export default function IntroductionForm({
         </fieldset>
       </div>
 
-      <label className="block text-label text-muted">
+      <label className="block min-w-0 text-label text-muted">
         Message
         <textarea
           required
           name="message"
           rows={4}
-          className="mt-2 w-full resize-y rounded-xl border border-[var(--glass-border)] bg-surface px-4 py-3 text-fg"
+          className="mt-2 block box-border w-full min-w-0 resize-y rounded-xl border border-[var(--glass-border)] bg-surface px-4 py-3 text-fg"
         />
       </label>
 
