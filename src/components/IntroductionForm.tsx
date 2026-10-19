@@ -303,7 +303,7 @@ export default function IntroductionForm({
                       <button
                         type="button"
                         onClick={() => {
-                          setSelectedCountry({ code, name, flag: '' });
+                          setSelectedCountry(countryCodes.find((country) => country.code === code) ?? null);
                           setCountryOpen(false);
                           setCountrySearch('');
                           setCountryError(false);

@@ -43,7 +43,7 @@ export async function POST(request: Request) {
       cache: 'no-store',
       redirect: 'follow',
     });
-    const result = await response.json().catch(() => null) as { ok?: boolean } | null;
+    const result = await response.json().catch(() => null) as { ok?: boolean; serialNo?: number } | null;
     if (!response.ok || !result?.ok) {
       return NextResponse.json({ error: 'We could not save your enquiry. Please try again or contact us directly.' }, { status: 502 });
     }
