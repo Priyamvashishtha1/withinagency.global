@@ -8,6 +8,7 @@ interface Props {
   size?: 'md' | 'sm';
   className?: string;
   type?: 'button' | 'submit' | 'reset';
+  disabled?: boolean;
   children: ReactNode;
 }
 
@@ -20,10 +21,10 @@ const variants = {
 };
 
 /** Pill button (52px high, 28px padding). Internal paths use next/link; mailto/http use <a>. */
-export default function Button({ href, variant = 'primary', size = 'md', className, type = 'button', children }: Props) {
-  const cls = cn(base, sizes[size], variants[variant], className);
+export default function Button({ href, variant = 'primary', size = 'md', className, type = 'button', disabled = false, children }: Props) {
+  const cls = cn(base, sizes[size], variants[variant], disabled && 'cursor-not-allowed opacity-60', className);
   if (type === 'submit' || type === 'reset') {
-    return <button type={type} className={cls}>{children}</button>;
+    return <button type={type} className={cls} disabled={disabled}>{children}</button>;
   }
   return href.startsWith('/') ? (
     <Link href={href} className={cls}>{children}</Link>
