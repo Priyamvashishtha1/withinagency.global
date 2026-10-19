@@ -101,9 +101,9 @@ export default function Page() {
 
     <section id="introduction" aria-labelledby="introduction-heading" className="pt-section lg:pt-section-lg">
       <Container>
-        <div className="capital-cta-grid grid items-start gap-12 rounded-3xl p-8 lg:grid-cols-12 lg:gap-8 lg:p-14">
+        <div className="capital-cta-grid grid min-w-0 items-start gap-12 rounded-3xl p-5 sm:p-8 lg:grid-cols-12 lg:gap-8 lg:p-14">
           <Reveal className="lg:col-span-5"><p className="capital-kicker mb-5">Start a conversation</p><SectionHeading id="introduction-heading" title="Request an introduction" description="Share a few details and we’ll be in touch within two working days." /></Reveal>
-          <Reveal delay={.1} className="lg:col-span-6 lg:col-start-7"><div className="rounded-2xl bg-bg/80 p-6 sm:p-8"><IntroductionForm disclaimer={disclaimer} /></div></Reveal>
+          <Reveal delay={.1} className="w-full min-w-0 lg:col-span-6 lg:col-start-7"><div className="w-full min-w-0 rounded-2xl bg-bg/80 p-5 sm:p-8"><IntroductionForm disclaimer={disclaimer} /></div></Reveal>
         </div>
       </Container>
     </section>
