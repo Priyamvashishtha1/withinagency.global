@@ -266,3 +266,6 @@
   .glass-card[data-interactive='true']:hover::after,
   .glass-card[data-interactive='true']:focus-within::after { transform: translateX(-120%); }
 }
+
+/* The supplied Within mark is light on transparent; invert it for light mode. */
+:root[data-theme='light'] .within-logo-mark { filter: invert(1); }
