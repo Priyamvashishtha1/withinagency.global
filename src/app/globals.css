@@ -161,7 +161,6 @@
   isolation: isolate;
   background: radial-gradient(ellipse at 76% 46%, rgba(29, 91, 67, .58), transparent 42%), var(--capital-emerald);
 }
-.capital-offer-section,
 .capital-emerald-section {
   position: relative;
   isolation: isolate;
@@ -171,7 +170,6 @@
     linear-gradient(180deg, #0a1712 0%, #0c1c15 52%, #0a1712 100%);
   color: var(--capital-ivory);
 }
-.capital-offer-section::after,
 .capital-emerald-section::after {
   content: '';
   position: absolute;
@@ -235,7 +233,6 @@
 .capital-page .capital-hero-description { color: var(--capital-ivory); }
 .capital-emerald-section .text-muted { color: rgba(245,241,232,.82); }
 .capital-emerald-section .capital-icon { color: #e0c477; }
-.capital-offer-section .capital-icon { color: #e0c477; }
 .capital-emerald-section .glass-card {
   background: linear-gradient(145deg, rgba(245,241,232,.09), rgba(8,24,19,.46));
   border-color: rgba(245,241,232,.19);
@@ -255,7 +252,6 @@
   background: linear-gradient(145deg, rgba(245,241,232,.055), rgba(4,16,12,.32));
   box-shadow: 0 8px 24px rgba(0,0,0,.12), inset 0 1px 0 rgba(245,241,232,.07);
 }
-.capital-emerald-section .text-muted { color: rgba(245,241,232,.82); }
 .capital-emerald-section .capital-kicker { color: #e0c477; }
 .capital-emerald-section .capital-kicker span { color: rgba(245,241,232,.72); }
 .capital-emerald-section .border-t { border-color: rgba(201,168,90,.5); }
@@ -272,6 +268,13 @@
 :root[data-theme='light'] .capital-page .capital-cta-grid .capital-kicker { color: #87651f; }
 :root[data-theme='light'] .capital-page .capital-cta-grid #introduction-heading { color: #0e3b2e; }
 :root[data-theme='light'] .capital-page .capital-cta-grid #introduction-heading + p { color: #36594e; }
+:root[data-theme='light'] .capital-page .capital-emerald-section { color: var(--capital-ivory); }
+:root[data-theme='light'] .capital-page .capital-emerald-section h2,
+:root[data-theme='light'] .capital-page .capital-emerald-section h3,
+:root[data-theme='light'] .capital-page .capital-emerald-section p,
+:root[data-theme='light'] .capital-page .capital-emerald-section .text-muted,
+:root[data-theme='light'] .capital-page .capital-emerald-section .text-fg { color: var(--capital-ivory) !important; }
+:root[data-theme='light'] .capital-page .capital-emerald-section .capital-icon { color: #e0c477; }
 .capital-panel {
   border: 1px solid var(--glass-border);
   background: linear-gradient(145deg, rgba(14,59,46,.25), var(--glass-fill));
