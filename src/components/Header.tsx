@@ -16,7 +16,15 @@ import { CloseIcon, MenuIcon } from './icons';
 export default function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const contact = `mailto:${site.email}`;
+  const isCapitalPage = pathname === '/capital';
+  const capitalPath = isCapitalPage ? '' : '/capital';
+  const navigation = [
+    { label: 'What we offer', href: `${capitalPath}#what-we-offer` },
+    { label: 'How it works', href: `${capitalPath}#how-it-works` },
+    { label: 'Why Within Capital', href: `${capitalPath}#why-within-capital` },
+    { label: 'About us', href: `${capitalPath}#about-us` },
+  ];
+  const contact = isCapitalPage ? '#introduction' : `mailto:${site.email}`;
 
   useEffect(() => setOpen(false), [pathname]);
   useEffect(() => {
@@ -33,26 +41,34 @@ export default function Header() {
 
         <nav aria-label="Primary" className="absolute left-1/2 hidden -translate-x-1/2 lg:block">
           <ul className="flex items-center gap-10">
-            {divisions.map((d) => {
-              const active = pathname === d.path;
-              return (
-                <li key={d.slug}>
-                  <Link
-                    href={d.path}
-                    aria-current={active ? 'page' : undefined}
-                    className={cn('text-sm tracking-[0.04em] transition-colors duration-300 hover:text-fg', active ? 'text-fg' : 'text-muted')}
-                  >
-                    {d.name}
-                  </Link>
-                </li>
-              );
-            })}
+            {isCapitalPage
+              ? navigation.map((item) => (
+                  <li key={item.href}>
+                    <Link href={item.href} className="text-sm tracking-[0.04em] text-muted transition-colors duration-300 hover:text-fg">
+                      {item.label}
+                    </Link>
+                  </li>
+                ))
+              : divisions.map((division) => {
+                  const active = pathname === division.path;
+                  return (
+                    <li key={division.slug}>
+                      <Link
+                        href={division.path}
+                        aria-current={active ? 'page' : undefined}
+                        className={cn('text-sm tracking-[0.04em] transition-colors duration-300 hover:text-fg', active ? 'text-fg' : 'text-muted')}
+                      >
+                        {division.name}
+                      </Link>
+                    </li>
+                  );
+                })}
           </ul>
         </nav>
 
         <div className="flex items-center gap-3">
           <ThemeToggle />
-          <Button href={contact} size="sm" className="hidden md:inline-flex">Contact</Button>
+          <Button href={contact} size="sm" className="hidden md:inline-flex">Contact us</Button>
           <button
             type="button"
             aria-expanded={open}
@@ -78,15 +94,23 @@ export default function Header() {
           >
             <nav aria-label="Mobile" className="glass rounded-card bg-surface/90 p-3">
               <ul>
-                {divisions.map((d) => (
-                  <li key={d.slug}>
-                    <Link href={d.path} className="block rounded-xl px-4 py-4 text-lg font-light uppercase tracking-[0.04em]">
-                      {d.title}
-                    </Link>
-                  </li>
-                ))}
+                {isCapitalPage
+                  ? navigation.map((item) => (
+                      <li key={item.href}>
+                        <Link href={item.href} onClick={() => setOpen(false)} className="block rounded-xl px-4 py-4 text-lg font-light uppercase tracking-[0.04em]">
+                          {item.label}
+                        </Link>
+                      </li>
+                    ))
+                  : divisions.map((division) => (
+                      <li key={division.slug}>
+                        <Link href={division.path} onClick={() => setOpen(false)} className="block rounded-xl px-4 py-4 text-lg font-light uppercase tracking-[0.04em]">
+                          {division.title}
+                        </Link>
+                      </li>
+                    ))}
               </ul>
-              <Button href={contact} className="mt-2 w-full md:hidden">Contact</Button>
+              <Button href={contact} className="mt-2 w-full md:hidden">Contact us</Button>
             </nav>
           </motion.div>
         )}

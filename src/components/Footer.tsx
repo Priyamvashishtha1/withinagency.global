@@ -14,8 +14,6 @@ export default function Footer() {
             <p className="mt-6 max-w-[34ch] text-body text-muted">{site.tagline}</p>
             <address className="mt-6 space-y-2 text-sm not-italic text-muted">
               <p>Within Capital connects investors with independent third-party providers. Provider details and regulatory status are shared directly during an introduction.</p>
-              <p>Registered office: details to be confirmed by Within Global.</p>
-              <a className="transition-colors hover:text-fg" href={`mailto:${site.email}`}>{site.email}</a>
             </address>
           </div>
           <nav aria-label="Divisions" className="md:col-span-3 md:col-start-8">
@@ -41,7 +39,7 @@ export default function Footer() {
         </div>
         <div className="mt-16 flex flex-col justify-between gap-2 border-t border-[var(--glass-border)] pt-8 text-label text-muted sm:flex-row">
           {/* <p>© {new Date().getFullYear()} Within Global. All rights reserved.</p> */}
-          <p>© 2022 Within Global. All rights reserved.</p>
+          <p>© 2026 Within Global. All rights reserved.</p>
           <p className="lowercase">withinagency.global</p>
         </div>
       </Container>

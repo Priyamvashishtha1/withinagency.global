@@ -161,6 +161,45 @@
   isolation: isolate;
   background: radial-gradient(ellipse at 76% 46%, rgba(29, 91, 67, .58), transparent 42%), var(--capital-emerald);
 }
+.capital-offer-section,
+.capital-emerald-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(29, 76, 59, .24), transparent 52%),
+    linear-gradient(180deg, #0a1712 0%, #0c1c15 52%, #0a1712 100%);
+  color: var(--capital-ivory);
+}
+.capital-offer-section::after,
+.capital-emerald-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: .045;
+  background-image: linear-gradient(rgba(245,241,232,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(245,241,232,.12) 1px, transparent 1px);
+  background-size: 96px 96px;
+  mask-image: linear-gradient(90deg, transparent, black 30%, black 70%, transparent);
+}
+.capital-content-section { background: transparent; }
+.capital-markets-section {
+  position: relative;
+  isolation: isolate;
+  padding-bottom: 5rem;
+}
+.capital-markets-section::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 5rem;
+  background: linear-gradient(180deg, transparent, rgba(14,59,46,.2));
+  pointer-events: none;
+}
+.capital-emerald-section { border-top: 1px solid rgba(245,241,232,.09); }
 .capital-hero::after {
   content: '';
   position: absolute;
@@ -194,6 +233,33 @@
 .capital-hero .text-label { color: rgba(245,241,232,.82); }
 .capital-page .capital-hero .text-muted { color: rgba(245,241,232,.82); }
 .capital-page .capital-hero-description { color: var(--capital-ivory); }
+.capital-emerald-section .text-muted { color: rgba(245,241,232,.82); }
+.capital-emerald-section .capital-icon { color: #e0c477; }
+.capital-offer-section .capital-icon { color: #e0c477; }
+.capital-emerald-section .glass-card {
+  background: linear-gradient(145deg, rgba(245,241,232,.09), rgba(8,24,19,.46));
+  border-color: rgba(245,241,232,.19);
+  box-shadow: 0 12px 30px rgba(0,0,0,.2), inset 0 1px 0 rgba(245,241,232,.12);
+}
+.capital-emerald-section .glass-card[data-interactive='true']:hover,
+.capital-emerald-section .glass-card[data-interactive='true']:focus-within { border-color: rgba(201,168,90,.68); }
+.capital-glass-panel {
+  border: 1px solid rgba(245,241,232,.22);
+  background: linear-gradient(135deg, rgba(5,14,11,.62), rgba(245,241,232,.045));
+  -webkit-backdrop-filter: blur(24px) saturate(145%);
+  backdrop-filter: blur(24px) saturate(145%);
+  box-shadow: 0 18px 50px rgba(0,0,0,.22), inset 0 1px 0 rgba(245,241,232,.13);
+}
+.capital-glass-item {
+  border: 1px solid rgba(245,241,232,.17);
+  background: linear-gradient(145deg, rgba(245,241,232,.055), rgba(4,16,12,.32));
+  box-shadow: 0 8px 24px rgba(0,0,0,.12), inset 0 1px 0 rgba(245,241,232,.07);
+}
+.capital-emerald-section .text-muted { color: rgba(245,241,232,.82); }
+.capital-emerald-section .capital-kicker { color: #e0c477; }
+.capital-emerald-section .capital-kicker span { color: rgba(245,241,232,.72); }
+.capital-emerald-section .border-t { border-color: rgba(201,168,90,.5); }
+.capital-emerald-section .text-\[var\(--capital-gold\)\] { color: #e0c477; }
 .capital-hero .capital-kicker { color: #e0c477; }
 .capital-hero .capital-kicker span { color: rgba(245,241,232,.72); }
 .capital-page .text-muted { color: rgb(var(--fg) / .78); }
