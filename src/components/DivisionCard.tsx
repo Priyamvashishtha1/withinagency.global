@@ -26,15 +26,10 @@ export default function DivisionCard({ division, compact = false }: { division: 
         </a>
       ) : (
         <span aria-hidden="true" className="mt-auto ml-auto pt-10">
-        {/* <span className="division-card-action glass glass-link grid h-btn w-btn place-items-center rounded-full">
-          <ArrowRight />
-        </span> */}
-        <span aria-hidden="true" className="mt-auto ml-auto pt-10">
-  <span className="division-card-action glass glass-link grid h-btn w-btn place-items-center rounded-full">
-    <ArrowRight />
-  </span>
-  <span className="mt-2 block text-center text-xs">Coming soon</span>
-</span>
+          <span className="division-card-action glass glass-link grid h-btn w-btn place-items-center rounded-full">
+            <ArrowRight />
+          </span>
+          <span className="mt-2 block text-center text-xs text-white">Coming soon</span>
         </span>
       )}
     </GlassCard>

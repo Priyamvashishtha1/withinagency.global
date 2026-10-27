@@ -111,19 +111,15 @@
     border-color: var(--division-border-hover);
   }
   .glass-card[data-division] .division-card-action {
-    color: var(--division-accent);
-    border-color: var(--division-border);
-  }
-  .glass-card[data-division='media'] .division-card-action {
-    color: var(--division-button-text);
-    background: var(--division-accent);
-    border-color: var(--division-accent);
+    color: #FFFFFF;
+    background: #7457FF;
+    border-color: #7457FF;
   }
   .glass-card[data-division] .division-card-action:hover,
   .glass-card[data-division] .division-card-action:focus-visible {
-    background: var(--division-accent);
-    color: var(--division-button-text,var(--division-text));
-    border-color: var(--division-accent);
+    background: #7457FF;
+    color: #FFFFFF;
+    border-color: #7457FF;
   }
   .glass-card::after {
     content: '';
