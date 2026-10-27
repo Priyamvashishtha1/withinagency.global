@@ -20,9 +20,9 @@ export default function Header() {
   const capitalPath = isCapitalPage ? '' : '/capital';
   const navigation = [
     { label: 'WHAT WE OFFER', href: `${capitalPath}#what-we-offer` },
-    { label: 'How it works', href: `${capitalPath}#how-it-works` },
-    { label: 'Why Within Capital', href: `${capitalPath}#why-within-capital` },
-    { label: 'About us', href: `${capitalPath}#about-us` },
+    { label: 'HOW IT WORKS', href: `${capitalPath}#how-it-works` },
+    { label: 'WHY WITHIN CAPITAL', href: `${capitalPath}#why-within-capital` },
+    { label: 'ABOUT US', href: `${capitalPath}#about-us` },
   ];
   const contact = isCapitalPage ? '#introduction' : `mailto:${site.email}`;
 
