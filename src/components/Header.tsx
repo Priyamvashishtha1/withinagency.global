@@ -19,7 +19,7 @@ export default function Header() {
   const isCapitalPage = pathname === '/capital';
   const capitalPath = isCapitalPage ? '' : '/capital';
   const navigation = [
-    { label: 'What we offer', href: `${capitalPath}#what-we-offer` },
+    { label: 'WHAT WE OFFER', href: `${capitalPath}#what-we-offer` },
     { label: 'How it works', href: `${capitalPath}#how-it-works` },
     { label: 'Why Within Capital', href: `${capitalPath}#why-within-capital` },
     { label: 'About us', href: `${capitalPath}#about-us` },
