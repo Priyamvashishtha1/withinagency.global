@@ -5,7 +5,6 @@ import Reveal from '@/components/Reveal';
 import SectionHeading from '@/components/SectionHeading';
 import IntroductionForm from '@/components/IntroductionForm';
 import { pageMetadata } from '@/lib/seo';
-import { div } from 'framer-motion/m';
 
 export const metadata = pageMetadata({
   title: 'Within Capital',
