@@ -5,6 +5,7 @@ import Reveal from '@/components/Reveal';
 import SectionHeading from '@/components/SectionHeading';
 import IntroductionForm from '@/components/IntroductionForm';
 import { pageMetadata } from '@/lib/seo';
+import { div } from 'framer-motion/m';
 
 export const metadata = pageMetadata({
   title: 'Within Capital',
@@ -31,8 +32,17 @@ const steps = [
 ];
 const reasons = [
   { title: 'Trusted network', text: 'Partners we know and have worked with.' },
-  { title: 'On-the-ground expertise', text: 'Our partners have offices across six Indian cities and across two UAE offices.' },
-  { title: 'Curated, not crowded', text: 'We show you fewer, better opportunities.' },
+  { title: 'On-the-ground expertise', text: 'Our partners have teams across India and in Dubai, Singapore and London.' },
+  // { title: 'Curated, not crowded', text: 'We show you fewer, better opportunities.' },
+  { title: 'Curated, not crowded', text: 'We focus on fewer, better opportunities.'  },
+  {
+  title: 'Proven scale',
+  text: 'Our wealth partners have served international and NRI families since 2014. They oversee more than US$5 billion in assets, with over 200 professionals across Singapore, Dubai, India and London.',
+},
+{
+  title: 'Regulated at every step',
+  text: 'Every partner we introduce is licensed in its own market. Between them, our partners are licensed by SEBI and AMFI in India, the DFSA in Dubai, MAS in Singapore and the FCA in the UK.',
+},
 ];
 
 export default function Page() {
@@ -55,7 +65,20 @@ export default function Page() {
             <Button href="#how-it-works" variant="glass" className="!border-white/20 !text-[var(--capital-ivory)]">How we work</Button>
           </div>
         </div>
-        {/* <div className="mt-20 flex items-center gap-4 text-label uppercase tracking-[0.18em] text-[var(--capital-ivory)]/45"><span className="h-px w-12 bg-[var(--capital-gold)]/70" />A considered connection between markets</div> */}
+        {/* <div className="mt-20 flex items-center gap-4 text-label uppercase tracking-[0.18em] text-[var(--capital-ivory)]/45"><span className="h-px w-12 bg-[var(--capital-gold)]/70" />Backed by partners with 75+ years of combined experience and more than US$5 billion in client assets, with teams regulated in India, the UAE, Singapore and the UK.</div> */}
+        
+       
+<div className="mt-20 w-full">
+  <div className="mb-8 h-px w-12 bg-[var(--capital-gold)]/70" />
+
+  <p className="max-w-6xl text-left text-label uppercase tracking-[0.18em] leading-relaxed text-[var(--capital-ivory)]/60">
+    Backed by partners with 75+ years of combined experience and more than
+    US$5 billion in client assets, with teams regulated in India, the UAE,
+    Singapore and the UK.
+  </p>
+</div>
+
+
       </Container>
     </section>
 
@@ -109,7 +132,7 @@ export default function Page() {
     </section>
 
     <section aria-labelledby="disclaimer-heading" className="capital-emerald-section py-16 lg:py-24">
-      <Container><div className="capital-glass-panel capital-disclosure-card rounded-3xl p-6 sm:p-9 lg:p-12"><Reveal><SectionHeading id="disclaimer-heading" title="Important information" /><div className="capital-disclosure-copy mt-6 max-w-[78ch] space-y-4 text-[15px] leading-7 text-muted">{disclaimer.split(/(?<=[.!?])\s+/).reduce<string[][]>((groups, sentence, index) => { const groupIndex = Math.floor(index / 3); groups[groupIndex] ??= []; groups[groupIndex].push(sentence); return groups; }, []).map((group, index) => <p key={index}>{group.join(' ')}</p>)}</div><div className="mt-8 grid gap-2 border-t border-[var(--glass-border)] pt-6 text-sm leading-relaxed text-muted sm:grid-cols-2"><p><span className="text-fg">Partnered with:</span> Count Infinity Services Pvt. Ltd., an AMFI-registered (ARN-324453), India.</p><p><span className="text-fg">UK Company number:</span> 14042521</p><p className="sm:col-span-2"><span className="text-fg">Registered office:</span> 128 City Road, London, United Kingdom, EC1V 2NX</p></div></Reveal></div></Container>
+      <Container><div className="capital-glass-panel capital-disclosure-card rounded-3xl p-6 sm:p-9 lg:p-12"><Reveal><SectionHeading id="disclaimer-heading" title="Important information" /><div className="capital-disclosure-copy mt-6 max-w-[78ch] space-y-4 text-[15px] leading-7 text-muted">{disclaimer.split(/(?<=[.!?])\s+/).reduce<string[][]>((groups, sentence, index) => { const groupIndex = Math.floor(index / 3); groups[groupIndex] ??= []; groups[groupIndex].push(sentence); return groups; }, []).map((group, index) => <p key={index}>{group.join(' ')}</p>)}</div><div className="mt-8 grid gap-2 border-t border-[var(--glass-border)] pt-6 text-sm leading-relaxed text-muted sm:grid-cols-2"><p><span className="text-fg">Partnered with:</span>  AMFI-registered mutual fund distributor (ARN-324453), India · Lighthouse Canton, regulated by MAS (Singapore), DFSA (Dubai), SEBI (India) and FCA (UK).</p><p className="sm:col-span-2"><span className="text-fg">UK Company number:</span> 14042521</p><p className="sm:col-span-2"><span className="text-fg">Registered office:</span> 128 City Road, London, United Kingdom, EC1V 2NX</p></div></Reveal></div></Container>
     </section>
   </main>;
 }
