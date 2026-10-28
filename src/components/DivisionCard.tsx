@@ -42,7 +42,8 @@ export default function DivisionCard({ division, compact = false }: { division: 
     <span className="division-card-action glass glass-link inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-medium tracking-wide transition-all duration-300 ease-out-cubic group-hover:gap-3">
       <span>Explore Now</span>
       <ArrowRight
-        size={16}
+        width={16}
+        height={16}
         strokeWidth={1.5}
         className="transition-transform duration-300 ease-out-cubic group-hover:translate-x-1"
       />
@@ -55,7 +56,7 @@ export default function DivisionCard({ division, compact = false }: { division: 
   >
     <span className="division-card-action glass glass-link inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-medium tracking-wide">
       <span>Explore Now</span>
-      <ArrowRight size={16} strokeWidth={1.5} />
+      <ArrowRight width={16} height={16} strokeWidth={1.5} />
     </span>
 
     <span className="mt-3 text-xs font-medium tracking-wide text-white/50">
