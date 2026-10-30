@@ -109,6 +109,11 @@ export default function IntroductionForm({
   const filteredCountries = countryCodes.filter(({ name, code, aliases }) =>
     `${name} ${code} ${aliases.join(' ')}`.toLowerCase().includes(countrySearch.trim().toLowerCase())
   );
+  const filteredPhoneCountries = phoneCountries.filter(({ name, dialCode, code, aliases }) =>
+    `${name} ${dialCode} ${code} ${aliases.join(' ')}`
+      .toLowerCase()
+      .includes(phoneCountrySearch.trim().toLowerCase())
+  );
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
