@@ -167,7 +167,7 @@ export default function IntroductionForm({
     <form onSubmit={handleSubmit} className="w-full min-w-0 space-y-6">
       <div className="grid w-full min-w-0 gap-6 sm:grid-cols-2">
         <label className="block min-w-0 text-label text-muted">
-          Name
+          Name <span aria-hidden="true" className="text-red-400">*</span>
           <input
             required
             autoComplete="name"
@@ -177,7 +177,7 @@ export default function IntroductionForm({
         </label>
 
         <label className="block min-w-0 text-label text-muted">
-          Email
+          Email <span aria-hidden="true" className="text-red-400">*</span>
           <input
             required
             type="email"
@@ -251,7 +251,7 @@ export default function IntroductionForm({
         </label>
 
         <label className="block min-w-0 text-label text-muted">
-          Country of residence
+          Country of residence <span aria-hidden="true" className="text-red-400">*</span>
           <span
             className="relative mt-2 block"
             onBlur={(event) => {
@@ -317,7 +317,7 @@ export default function IntroductionForm({
 
         <fieldset className="min-w-0">
           <legend className="block text-label text-muted">
-            Area of interest <span className="text-red-400">*</span>
+            Area of interest <span aria-hidden="true" className="text-red-400">*</span>
           </legend>
 
           <div className="mt-3 space-y-3">
