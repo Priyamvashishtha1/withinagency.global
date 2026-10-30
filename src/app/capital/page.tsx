@@ -5,6 +5,7 @@ import Reveal from '@/components/Reveal';
 import SectionHeading from '@/components/SectionHeading';
 import IntroductionForm from '@/components/IntroductionForm';
 import { pageMetadata } from '@/lib/seo';
+import Image from 'next/image';
 
 export const metadata = pageMetadata({
   title: 'Within Capital',
@@ -101,6 +102,31 @@ export default function Page() {
         </ul>
         <p className="mt-7 text-sm leading-relaxed text-muted">All products and services are provided by specialist partners, who are regulated in their own markets.</p>
       </div></Container>
+    </section>
+
+    <section aria-labelledby="capital-partners-heading" className="capital-emerald-section py-16 lg:py-24">
+      <Container>
+        <Reveal>
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="capital-kicker mb-5">Trusted relationships</p>
+            <SectionHeading id="capital-partners-heading" title="Our partners" align="center" />
+          </div>
+        </Reveal>
+        <ul className="mx-auto mt-12 grid max-w-5xl grid-cols-1 divide-y divide-[rgba(201,168,90,.3)] border-y border-[rgba(201,168,90,.3)] sm:grid-cols-2 sm:divide-x sm:divide-y-0">
+          <li className="flex min-h-36 items-center justify-center px-8 py-8 sm:min-h-40 sm:px-12 sm:py-10">
+            <Reveal className="flex w-full items-center justify-center">
+              <Image src="/brand-assets/lighthouse.png" alt="Lighthouse Canton" width={252} height={64} className="h-auto w-[min(100%,280px)] object-contain" />
+            </Reveal>
+          </li>
+          <li className="flex min-h-36 items-center justify-center px-8 py-8 sm:min-h-40 sm:px-12 sm:py-10">
+            <Reveal delay={0.1} className="flex w-full items-center justify-center">
+              <span className="flex w-full max-w-[280px] items-center justify-center bg-[var(--capital-ivory)] px-3 py-2.5 sm:px-4 sm:py-3">
+                <Image src="/brand-assets/countinfinity.webp" alt="Count Infinity Services" width={240} height={83} className="h-auto w-full object-contain" />
+              </span>
+            </Reveal>
+          </li>
+        </ul>
+      </Container>
     </section>
 
     <section id="about-us" aria-labelledby="clients-heading" className="capital-content-section scroll-mt-header py-16 lg:py-24">
