@@ -104,15 +104,10 @@ export default function IntroductionForm({
   const [phoneCountry, setPhoneCountry] = useState(phoneCountries.find(({ code }) => code === 'GB')!);
   const [phoneCountryOpen, setPhoneCountryOpen] = useState(false);
   const [phoneCountrySearch, setPhoneCountrySearch] = useState('');
-  const [phoneError, setPhoneError] = useState('');
+  const [interestError, setInterestError] = useState(false);
 
   const filteredCountries = countryCodes.filter(({ name, code, aliases }) =>
     `${name} ${code} ${aliases.join(' ')}`.toLowerCase().includes(countrySearch.trim().toLowerCase())
-  );
-  const filteredPhoneCountries = phoneCountries.filter(({ name, dialCode, code, aliases }) =>
-    `${name} ${dialCode} ${code} ${aliases.join(' ')}`
-      .toLowerCase()
-      .includes(phoneCountrySearch.trim().toLowerCase())
   );
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -125,16 +120,14 @@ export default function IntroductionForm({
     }
 
     const form = new FormData(event.currentTarget);
-    const phoneNumber = String(form.get('phone') ?? '').trim();
-    const normalizedPhone = phoneNumber.replace(/[\s().-]/g, '');
-    if (!/^\+?\d{7,15}$/.test(normalizedPhone)) {
-      setPhoneError('Enter a valid phone number with 7–15 digits.');
-      (event.currentTarget.elements.namedItem('phone') as HTMLInputElement)?.focus();
+    const interests = form.getAll('interest').map(String);
+    if (interests.length === 0) {
+      setInterestError(true);
       return;
     }
-    setPhoneError('');
+    setInterestError(false);
+    const phoneNumber = String(form.get('phone') ?? '').trim();
 
-    const interests = form.getAll("interest").map(String);
     setIsSubmitting(true);
     setSubmissionError('');
     setSubmitted(false);
@@ -146,7 +139,7 @@ export default function IntroductionForm({
         body: JSON.stringify({
           name: form.get('name'),
           email: form.get('email'),
-          phone: `${phoneCountry.dialCode} ${phoneNumber}`,
+          phone: phoneNumber ? `${phoneCountry.dialCode} ${phoneNumber}` : '',
           country: selectedCountry.name,
           interests,
           message: form.get('message'),
@@ -192,7 +185,7 @@ export default function IntroductionForm({
         </label>
 
         <label className="block min-w-0 text-label text-muted">
-          Phone number
+          Phone number <span className="text-muted">(optional)</span>
           <span
             className="mt-2 box-border flex w-full min-w-0 rounded-xl border border-[var(--glass-border)] bg-surface text-fg"
             onBlur={(event) => {
@@ -245,17 +238,11 @@ export default function IntroductionForm({
               name="phone"
               autoComplete="tel-national"
               inputMode="tel"
-              required
-              minLength={7}
               maxLength={25}
               placeholder="Phone number"
-              aria-invalid={Boolean(phoneError)}
-              aria-describedby={phoneError ? 'phone-error' : undefined}
-              onChange={() => setPhoneError('')}
               className="box-border min-w-0 flex-1 rounded-r-xl bg-transparent px-3 py-3 text-fg outline-none placeholder:text-muted"
             />
           </span>
-          {phoneError && <span id="phone-error" role="alert" className="mt-2 block text-sm text-red-400">{phoneError}</span>}
         </label>
 
         <label className="block min-w-0 text-label text-muted">
@@ -325,7 +312,7 @@ export default function IntroductionForm({
 
         <fieldset className="min-w-0">
           <legend className="block text-label text-muted">
-            Area of interest
+            Area of interest <span className="text-red-400">*</span>
           </legend>
 
           <div className="mt-3 space-y-3">
@@ -339,6 +326,11 @@ export default function IntroductionForm({
                     type="checkbox"
                     name="interest"
                     value={item}
+                    onChange={(changeEvent) => {
+                      if (changeEvent.currentTarget.form?.querySelector('input[name="interest"]:checked')) {
+                        setInterestError(false);
+                      }
+                    }}
                     className="size-4 accent-current"
                   />
                   <span>{item}</span>
@@ -346,13 +338,13 @@ export default function IntroductionForm({
               )
             )}
           </div>
+          {interestError && <span role="alert" className="mt-2 block text-sm text-red-400">Please select at least one area of interest.</span>}
         </fieldset>
       </div>
 
       <label className="block min-w-0 text-label text-muted">
         Message
         <textarea
-          required
           name="message"
           rows={4}
           className="mt-2 block box-border w-full min-w-0 resize-y rounded-xl border border-[var(--glass-border)] bg-surface px-4 py-3 text-fg"
@@ -361,7 +353,6 @@ export default function IntroductionForm({
 
       <label className="flex items-start gap-3 text-sm leading-relaxed text-muted">
         <input
-          required
           type="checkbox"
           name="consent"
           className="mt-1 size-4 accent-current"
@@ -381,7 +372,11 @@ export default function IntroductionForm({
           Thank you. Your enquiry has been saved successfully.
         </p>
       )}
-      {submissionError && <p role="alert" className="text-sm text-red-400">{submissionError} If the issue continues, contact {site.email}.</p>}
+      {submissionError && (
+        <p role="alert" className="text-sm text-red-400">
+          {submissionError}{site.email ? ` If the issue continues, contact ${site.email}.` : ''}
+        </p>
+      )}
 
       {/* <div className="border-t border-[var(--glass-border)] pt-6">
         <h3 className="text-label text-fg">Legal disclaimer</h3>

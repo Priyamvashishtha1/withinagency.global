@@ -6,7 +6,7 @@ export const site = {
   tagline: ' Within Global connects capital, culture and technology to help brands and investors scale across markets.',
   description:
     'We work at the point where investment, partnerships and media meet. Each of our businesses is a specialist in its own right. Together, they give our clients one partner for entering new markets, building brand value and growing faster.',
-  email: 'hello@withinagency.global',
+  email: '',
   // Replace "#" with real URLs when your legal pages exist (e.g. a hosted policy document).
   legal: [
     { label: 'Privacy policy', href: '#' },

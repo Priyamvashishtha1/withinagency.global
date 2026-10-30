@@ -59,6 +59,16 @@ export default function Page() {
           <h1 id="hero-heading" className="max-w-5xl text-balance text-[clamp(3.3rem,9vw,8.5rem)] font-light leading-[0.96] tracking-[-0.065em] text-[var(--capital-ivory)]">Capital that<br className="hidden sm:block" /> crosses borders<span className="text-[var(--capital-gold)]">.</span></h1>
           <div className="mt-8 h-px w-24 bg-[var(--capital-gold)]" />
           <p className="capital-hero-description mt-8 max-w-[54ch] text-lg leading-relaxed lg:text-xl">We connect international investors with trusted, regulated partners for funds, private companies and real estate in two of the world’s most dynamic markets.</p>
+          
+<div className="mt-8 w-full">       
+  <div className="mb-6 h-px w-12 bg-[var(--capital-gold)]/70" />
+  <p className="max-w-6xl text-left text-label uppercase tracking-[0.1em] leading-relaxed text-[var(--capital-ivory)]/60">
+    Backed by partners with 75+ years of combined experience and more than
+    US$5 billion in client assets, with teams regulated in India, the UAE,
+    Singapore and the UK.
+  </p>
+</div>
+
           <div className="mt-10 flex flex-wrap gap-4">
             <Button href="#introduction" className="!bg-[var(--capital-ivory)] !text-[var(--capital-emerald)] hover:!bg-white">Request an introduction <span aria-hidden="true">↗</span></Button>
             <Button href="#how-it-works" variant="glass" className="!border-white/20 !text-[var(--capital-ivory)]">How we work</Button>
@@ -67,15 +77,7 @@ export default function Page() {
         {/* <div className="mt-20 flex items-center gap-4 text-label uppercase tracking-[0.18em] text-[var(--capital-ivory)]/45"><span className="h-px w-12 bg-[var(--capital-gold)]/70" />Backed by partners with 75+ years of combined experience and more than US$5 billion in client assets, with teams regulated in India, the UAE, Singapore and the UK.</div> */}
         
        
-<div className="mt-20 w-full">
-  <div className="mb-8 h-px w-12 bg-[var(--capital-gold)]/70" />
 
-  <p className="max-w-6xl text-left text-label uppercase tracking-[0.18em] leading-relaxed text-[var(--capital-ivory)]/60">
-    Backed by partners with 75+ years of combined experience and more than
-    US$5 billion in client assets, with teams regulated in India, the UAE,
-    Singapore and the UK.
-  </p>
-</div>
 
 
       </Container>

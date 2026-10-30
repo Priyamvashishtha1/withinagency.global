@@ -15,24 +15,26 @@ export async function POST(request: Request) {
   const name = typeof data.name === 'string' ? data.name.trim() : '';
   const email = typeof data.email === 'string' ? data.email.trim() : '';
   const phone = typeof data.phone === 'string' ? data.phone.trim() : '';
-  const normalizedPhone = phone.replace(/[\s().-]/g, '');
   const country = typeof data.country === 'string' ? data.country.trim() : '';
   const interests = Array.isArray(data.interests)
-    ? data.interests.filter((value): value is string => typeof value === 'string').slice(0, 10)
+    ? data.interests.filter((value): value is string =>
+        typeof value === 'string' && ['Funds', 'Private companies', 'Real estate'].includes(value)
+      ).slice(0, 10)
     : [];
   const message = typeof data.message === 'string' ? data.message.trim() : '';
   const consent = data.consent === true;
 
   if (!name || name.length > 200 || !emailPattern.test(email) || email.length > 254 ||
-      !/^\+?\d{7,15}$/.test(normalizedPhone) || phone.length > 40 || !country || country.length > 100 ||
-      message.length < 1 || message.length > 5000 || !consent) {
+      phone.length > 40 || !country || country.length > 100 || interests.length === 0 ||
+      message.length > 5000) {
     return NextResponse.json({ error: 'Please check the required form details and try again.' }, { status: 400 });
   }
 
   const scriptUrl = process.env.GOOGLE_SHEETS_WEBHOOK_URL;
   const secret = process.env.GOOGLE_SHEETS_WEBHOOK_SECRET;
   if (!scriptUrl || !secret) {
-    return NextResponse.json({ error: 'Form submissions are not connected yet. Please contact us directly.' }, { status: 503 });
+    console.error('Introduction form is not configured: GOOGLE_SHEETS_WEBHOOK_URL and/or GOOGLE_SHEETS_WEBHOOK_SECRET is missing.');
+    return NextResponse.json({ error: 'This form is temporarily unavailable. Please try again later.' }, { status: 503 });
   }
 
   try {
